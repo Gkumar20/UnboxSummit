@@ -1,0 +1,64 @@
+/* Carousel Styles */
+.workshop-slider .slick-slide {
+    padding: 10px;
+}
+
+.workshop-slider .slick-dots li button:before {
+    color: #3b82f6;
+}
+
+.workshop-slider .slick-dots li.slick-active button:before {
+    color: #60a5fa;
+}
+
+/* Gradient Text Animation */
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text {
+    background-size: 200% auto;
+    animation: gradientText 5s ease infinite;
+}
+
+/* Flow Diagram Styles */
+.react-flow__node {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.react-flow__handle {
+    width: 8px;
+    height: 8px;
+}
+
+.react-flow__edge-path {
+    stroke-width: 2;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
