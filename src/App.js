@@ -9,6 +9,7 @@ import AIAnalysis from './pages/AIAnalysis';
 import EmailConfirmation from './pages/EmailConfirmation';
 import Mentorship from './pages/Mentorship';
 import Activities from './pages/Activities';
+import Market from './pages/Market';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/email-confirmation" element={<EmailConfirmation />} />
           <Route path="/mentorship" element={<Mentorship />} />
           <Route path="/activities" element={<Activities />} />
+          <Route path="/market" element={<Market />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>
