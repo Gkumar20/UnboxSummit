@@ -31,7 +31,7 @@ const MainLayout = ({ children }) => {
                     <motion.img 
                         src="/DOX.png" 
                         alt="Amdocs Logo" 
-                        className="h-6 w-auto mb-2 bg-white"
+                        className="h-6 w-auto mb-2"
                         initial={{ opacity: 0.8 }}
                         whileHover={{ opacity: 1, scale: 1.05 }}
                         transition={{ duration: 0.2 }}
