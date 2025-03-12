@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { FaUser, FaEnvelope, FaLock, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 
 const Registration = () => {
@@ -235,12 +236,12 @@ const Registration = () => {
                                     Next
                                 </button>
                             ) : (
-                                <button
-                                    type="submit"
+                                <Link
+                                    to="/ai-analysis"
                                     className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 ml-auto"
                                 >
                                     Complete Registration
-                                </button>
+                                </Link>
                             )}
                         </div>
                     </form>

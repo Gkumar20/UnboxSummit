@@ -155,13 +155,14 @@ const AIAnalysis = () => {
                     </div>
 
                     <div className="text-center mt-12">
-                        <motion.button
+                        <motion.a
+                            href='/email-confirmation'
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-700 transition-all duration-300"
                         >
                             Continue to Email Confirmation
-                        </motion.button>
+                        </motion.a>
                     </div>
                 </div>
             )}

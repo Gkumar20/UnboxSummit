@@ -146,13 +146,14 @@ const EmailConfirmation = () => {
                             <FaDownload />
                             Download Roadmap PDF
                         </motion.button>
-                        <motion.button
+                        <motion.a
+                        href='/mentorship'
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             className="flex-1 px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200"
                         >
                             Continue to Mentorship
-                        </motion.button>
+                        </motion.a>
                     </div>
 
                     {/* Additional Information */}
