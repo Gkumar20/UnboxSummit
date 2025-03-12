@@ -19,6 +19,11 @@ const MainLayout = ({ children }) => {
                     </Link>
                     <div className="space-x-4">
                         <Link to="/" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">Home</Link>
+                        <Link to="/register" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">Register</Link>
+                        <Link to="/ai-analysis" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">AI Analysis</Link>
+                        <Link to="/email-confirmation" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">Email</Link>
+                        <Link to="/mentorship" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">Mentorship</Link>
+                        <Link to="/activities" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">Activities</Link>
                         <Link to="/about" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">About</Link>
                     </div>
                 </div>
