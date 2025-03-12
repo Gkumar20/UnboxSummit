@@ -1,5 +1,5 @@
 import React from 'react';
-import { Handle, Position } from '@reactflow/core';
+import { Handle, Position } from 'reactflow';
 
 const ProcessNode = ({ data }) => {
   return (
