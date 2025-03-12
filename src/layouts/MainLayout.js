@@ -24,6 +24,7 @@ const MainLayout = ({ children }) => {
                         <Link to="/email-confirmation" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">Email</Link>
                         <Link to="/mentorship" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">Mentorship</Link>
                         <Link to="/activities" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">Activities</Link>
+                        <Link to="/market" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">Market Place</Link>
                         <Link to="/about" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">About</Link>
                     </div>
                 </div>
