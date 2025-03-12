@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const MainLayout = ({ children }) => {
     return (
         <div className="min-h-screen flex flex-col">
-            <nav className="bg-gray-800 text-white p-4">
+            <nav className="bg-gradient-to-r from-blue-50 to-indigo-100 text-gray-800 shadow-md p-4">
                 <div className="container mx-auto flex justify-between items-center">
                     <Link to="/" className="flex items-center space-x-3 group">
                         <motion.img 
@@ -15,18 +15,18 @@ const MainLayout = ({ children }) => {
                             whileHover={{ scale: 1.1 }}
                             transition={{ type: "spring", stiffness: 400, damping: 10 }}
                         />
-                        <span className="text-xl font-bold group-hover:text-blue-400 transition-colors">UnBox Summit</span>
+                        <span className="text-xl font-bold text-yellow-700 group-hover:text-pink-800 transition-colors">UnBox Summit</span>
                     </Link>
                     <div className="space-x-4">
-                        <Link to="/" className="hover:text-blue-400 transition-colors">Home</Link>
-                        <Link to="/about" className="hover:text-blue-400 transition-colors">About</Link>
+                        <Link to="/" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">Home</Link>
+                        <Link to="/about" className="text-gray-600 hover:text-pink-600 transition-colors font-medium">About</Link>
                     </div>
                 </div>
             </nav>
             <main className="flex-grow">
                 {children}
             </main>
-            <footer className="bg-gray-800 text-white p-4">
+            <footer className="bg-gradient-to-r from-blue-50 to-indigo-100 text-gray-800 shadow-md p-4">
                 <div className="container mx-auto text-center flex flex-col items-center">
                     <motion.img 
                         src="/DOX.png" 
@@ -36,7 +36,7 @@ const MainLayout = ({ children }) => {
                         whileHover={{ opacity: 1, scale: 1.05 }}
                         transition={{ duration: 0.2 }}
                     />
-                    <p>© 2024 Amdocs. All rights reserved.</p>
+                    <p className="text-gray-600">© 2024 Amdocs. All rights reserved.</p>
                 </div>
             </footer>
         </div>

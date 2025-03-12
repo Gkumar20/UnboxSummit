@@ -20,7 +20,7 @@ const ProgressTracker = ({ currentPoints = 0, milestones = [] }) => {
                     initial={{ width: 0 }}
                     animate={{ width: `${progress}%` }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="absolute h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+                    className="absolute h-full bg-gradient-to-r  from-yellow-200 to-pink-600 rounded-full"
                 />
                 {activeMilestones.map((milestone, index) => {
                     const position = (milestone.points / maxPoints) * 100;
@@ -38,7 +38,7 @@ const ProgressTracker = ({ currentPoints = 0, milestones = [] }) => {
                             >
                                 <milestone.icon className="w-4 h-4 text-white" />
                             </motion.div>
-                            <p className="text-sm text-gray-300 mt-2 text-center">
+                            <p className="text-sm text-gray-600 mt-2 text-center">
                                 {milestone.label}
                                 <br />
                                 {milestone.points} pts

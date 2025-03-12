@@ -84,26 +84,26 @@ const Homepage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900">
+        <div className="min-h-screen bg-gradient-to-b from-white via-blue-50 to-indigo-50">
             {/* Hero Section */}
             <div className="relative h-screen flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/90"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/90"></div>
                 <motion.div 
                     className="text-center z-10 px-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-600">
                         Discover Your Path
                     </h1>
-                    <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-xl md:text-2xl mb-8 text-gray-600 max-w-2xl mx-auto">
                         Let AI guide you to your perfect career path with personalized mentorship and hands-on learning
                     </p>
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-gradient-to-r  from-yellow-200 to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                         Start Your Journey
                     </motion.button>
@@ -112,15 +112,15 @@ const Homepage = () => {
 
             {/* Process Steps */}
             <div className="container mx-auto px-4 py-20">
-                <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r  from-yellow-200 to-pink-600">
                     Your Path to Success
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {processSteps.map((step, index) => (
-                        <AnimatedCard key={index} delay={index * 0.1} className="bg-white/10 backdrop-blur-md rounded-lg p-6 text-white">
-                            <step.icon className="w-12 h-12 mb-4 text-blue-400" />
-                            <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                            <p className="text-gray-300">{step.description}</p>
+                        <AnimatedCard key={index} delay={index * 0.1} className="bg-white/80 backdrop-blur-md rounded-lg p-6 shadow-lg border border-blue-100">
+                            <step.icon className="w-12 h-12 mb-4 text-blue-500" />
+                            <h3 className="text-xl font-semibold mb-2 text-gray-800">{step.title}</h3>
+                            <p className="text-gray-600">{step.description}</p>
                         </AnimatedCard>
                     ))}
                 </div>
@@ -128,21 +128,21 @@ const Homepage = () => {
 
             {/* Upcoming Workshops Carousel */}
             <div className="container mx-auto px-4 py-20">
-                <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r  from-yellow-200 to-pink-600">
                     Upcoming Workshops
                 </h2>
                 <Slider {...sliderSettings} className="workshop-slider">
                     {workshops.map((workshop, index) => (
                         <div key={index} className="px-4">
-                            <AnimatedCard className="bg-white/10 backdrop-blur-md rounded-lg p-6 text-white h-full">
+                            <AnimatedCard className="bg-white/80 backdrop-blur-md rounded-lg p-6 shadow-lg border border-blue-100 h-full">
                                 <div className="flex flex-col h-full">
-                                    <h3 className="text-xl font-semibold mb-2">{workshop.title}</h3>
-                                    <p className="text-gray-300 mb-4">Date: {workshop.date}</p>
-                                    <p className="text-gray-300 mb-4">Available Spots: {workshop.spots}</p>
+                                    <h3 className="text-xl font-semibold mb-2 text-gray-800">{workshop.title}</h3>
+                                    <p className="text-gray-600 mb-4">Date: {workshop.date}</p>
+                                    <p className="text-gray-600 mb-4">Available Spots: {workshop.spots}</p>
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="mt-auto bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center justify-center gap-2"
+                                        className="mt-auto bg-blue-500 hover:bg-indigo-500 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center justify-center gap-2"
                                     >
                                         Register Now <FaArrowRight />
                                     </motion.button>
@@ -155,16 +155,16 @@ const Homepage = () => {
 
             {/* Process Flow Diagram */}
             <div className="container mx-auto px-4 py-20">
-                <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r  from-yellow-200 to-pink-600">
                     Your Journey Map
                 </h2>
-                <div className="h-[400px] bg-gray-800/50 rounded-lg p-4 shadow-xl" data-aos="fade-up">
+                <div className="h-[400px] bg-white/80 rounded-lg p-4 shadow-lg border border-blue-100" data-aos="fade-up">
                     <ReactFlow
                         nodes={flowNodes}
                         edges={edges}
                         nodeTypes={nodeTypes}
                         fitView
-                        className="bg-gray-900/50"
+                        className="bg-blue-50/50"
                         defaultViewport={{ x: 0, y: 0, zoom: 1.5 }}
                     >
                         <Background color="#3b82f6" gap={16} size={1} />
@@ -175,12 +175,12 @@ const Homepage = () => {
 
             {/* Achievements & Milestones Section */}
             <div className="container mx-auto px-4 py-20">
-                <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 gradient-text">
+                <h2 className="text-4xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r  from-yellow-200 to-pink-600 gradient-text">
                     Your Progress Journey
                 </h2>
                 
                 {/* Progress Tracker */}
-                <div className="mb-16">
+                <div className="mb-16 text-gray-600">
                     <ProgressTracker currentPoints={250} />
                 </div>
 
@@ -190,18 +190,18 @@ const Homepage = () => {
                         <AnimatedCard 
                             key={index} 
                             delay={index * 0.1} 
-                            className="bg-white/10 backdrop-blur-md rounded-lg p-6 text-white"
+                            className="bg-white/80 backdrop-blur-md rounded-lg p-6 shadow-lg border border-blue-100"
                         >
                             <div className="flex items-start justify-between mb-4">
-                                <h3 className="text-lg font-semibold">{achievement.title}</h3>
-                                <span className="bg-blue-500 px-2 py-1 rounded-full text-sm">
+                                <h3 className="text-lg font-semibold text-gray-800">{achievement.title}</h3>
+                                <span className="bg-blue-500 px-2 py-1 rounded-full text-sm text-white">
                                     {achievement.points} pts
                                 </span>
                             </div>
-                            <p className="text-gray-300 text-sm">{achievement.description}</p>
-                            <div className="relative w-full h-1 bg-gray-700 rounded-full mt-4 overflow-hidden">
+                            <p className="text-gray-600 text-sm">{achievement.description}</p>
+                            <div className="relative w-full h-1 bg-gray-200 rounded-full mt-4 overflow-hidden">
                                 <motion.div
-                                    className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500"
+                                    className="absolute inset-0 bg-gradient-to-r  from-yellow-200 to-pink-600"
                                     initial={{ width: 0 }}
                                     whileInView={{ width: '60%' }}
                                     transition={{ duration: 1, delay: 0.5 + (index * 0.1) }}
@@ -215,7 +215,7 @@ const Homepage = () => {
 
             {/* Call to Action */}
             <div className="container mx-auto px-4 py-20">
-                <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 md:p-12 text-center">
+                <div className="bg-gradient-to-r  from-yellow-200 to-pink-600 rounded-2xl p-8 md:p-12 text-center shadow-xl">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Start Your Journey?</h2>
                     <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
                         Join thousands of successful professionals who found their dream career path through our platform

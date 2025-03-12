@@ -64,11 +64,11 @@ const About = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 via-blue-900 to-gray-900 text-white gradient-bg relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-b from-white via-blue-50 to-indigo-50 relative overflow-hidden">
             <BackgroundPattern />
             {/* Hero Section */}
             <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/90"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/90"></div>
                 <motion.div 
                     className="container mx-auto px-4 text-center relative z-10"
                     initial={{ opacity: 0 }}
@@ -81,12 +81,12 @@ const About = () => {
                         transition={{ duration: 0.5 }}
                         className="mb-8"
                     >
-                        <MdDesignServices className="w-24 h-24 mx-auto text-blue-400 award-icon" />
+                        <MdDesignServices className="w-24 h-24 mx-auto text-blue-500 award-icon" />
                     </motion.div>
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r  from-yellow-200 to-pink-600">
                         UnBox Summit 2025
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                    <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
                         Unleashing Innovation through Design Thinking - Where Creativity Meets Problem Solving
                     </p>
                 </motion.div>
@@ -96,7 +96,7 @@ const About = () => {
             <div className="container mx-auto px-4 py-20">
                 {/* About Section */}
                 <div className="mb-20">
-                    <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r  from-yellow-200 to-pink-600">
                         About UnBox Summit
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -105,13 +105,13 @@ const About = () => {
                             whileInView={{ x: 0, opacity: 1 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
-                            className="prose prose-lg prose-invert"
+                            className="prose prose-lg"
                         >
-                            <p className="text-lg text-gray-300 mb-6">
+                            <p className="text-lg text-gray-600 mb-6">
                                 UnBox Summit 2025 is Amdocs' premier design thinking hackathon that brings together
                                 creative minds to solve real-world challenges through human-centered design approaches.
                             </p>
-                            <p className="text-lg text-gray-300">
+                            <p className="text-lg text-gray-600">
                                 Our mission is to foster innovation by empowering participants with design thinking
                                 methodologies, enabling them to create impactful solutions that address genuine human needs.
                             </p>
@@ -121,10 +121,10 @@ const About = () => {
                                 <AnimatedCard
                                     key={index}
                                     delay={index * 0.1}
-                                    className="bg-white/10 backdrop-blur-md p-6 rounded-lg text-center tech-stack-icon"
+                                    className="bg-white/80 backdrop-blur-md p-6 rounded-lg text-center shadow-lg border border-blue-100 tech-stack-icon"
                                 >
-                                    <phase.icon className="w-12 h-12 mx-auto mb-4 text-blue-400 tech-icon" />
-                                    <p className="text-gray-300">{phase.title}</p>
+                                    <phase.icon className="w-12 h-12 mx-auto mb-4 text-blue-500 tech-icon" />
+                                    <p className="text-gray-700 font-medium">{phase.title}</p>
                                 </AnimatedCard>
                             ))}
                         </div>
@@ -137,11 +137,11 @@ const About = () => {
                         <AnimatedCard
                             key={index}
                             delay={index * 0.1}
-                            className="bg-white/10 backdrop-blur-md rounded-lg p-8 feature-card"
+                            className="bg-white/80 backdrop-blur-md rounded-lg p-8 shadow-lg border border-blue-100 feature-card"
                         >
-                            <feature.icon className="w-12 h-12 text-blue-400 mb-4" />
-                            <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                            <p className="text-gray-300">{feature.description}</p>
+                            <feature.icon className="w-12 h-12 text-blue-500 mb-4" />
+                            <h3 className="text-xl font-bold mb-4 text-gray-800">{feature.title}</h3>
+                            <p className="text-gray-600">{feature.description}</p>
                         </AnimatedCard>
                     ))}
                 </div>
@@ -157,17 +157,17 @@ const About = () => {
                         <AnimatedCard
                             key={index}
                             delay={index * 0.1}
-                            className="bg-white/10 backdrop-blur-md rounded-lg p-6 text-center"
+                            className="bg-white/80 backdrop-blur-md rounded-lg p-6 text-center shadow-lg border border-blue-100"
                         >
                             <motion.h3
                                 initial={{ scale: 0.5 }}
                                 whileInView={{ scale: 1 }}
                                 transition={{ duration: 0.5 }}
-                                className="text-3xl md:text-4xl font-bold text-blue-400 mb-2 stat-number"
+                                className="text-3xl md:text-4xl font-bold text-blue-500 mb-2 stat-number"
                             >
                                 {stat.number}
                             </motion.h3>
-                            <p className="text-gray-300">{stat.label}</p>
+                            <p className="text-gray-600">{stat.label}</p>
                         </AnimatedCard>
                     ))}
                 </div>
@@ -181,7 +181,7 @@ const About = () => {
                     >
                         <a
                             href="#join-program"
-                            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2"
+                            className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2"
                         >
                             Join the Innovation Journey <FaLightbulb className="w-5 h-5" />
                         </a>
