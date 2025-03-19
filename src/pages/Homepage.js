@@ -24,7 +24,7 @@ const Homepage = () => {
     const processSteps = [
         { icon: FaUserGraduate, title: 'Registration', description: 'Start your journey by creating your profile' },
         { icon: FaRobot, title: 'AI Career Path', description: 'Get personalized career recommendations' },
-        { icon: FaEnvelope, title: 'rmation', description: 'Receive your customized career roadmap' },
+        { icon: FaEnvelope, title: 'Email Confirmation', description: 'Receive your customized career roadmap' },
         { icon: FaUsers, title: 'Mentor Connection', description: 'Connect with industry experts' },
         { icon: FaGamepad, title: 'Workshops & Games', description: 'Learn through interactive sessions' },
         { icon: FaTrophy, title: 'Milestone Points', description: 'Track your progress and achievements' }
