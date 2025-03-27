@@ -81,14 +81,14 @@ const Market = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-12 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-8 md:py-12 px-4">
             <div className="container mx-auto">
                 {/* Hero Section with Enhanced Animation */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-16 relative"
+                    className="text-center mb-8 md:mb-16 relative"
                 >
                     <motion.div
                         animate={{ 
@@ -100,18 +100,18 @@ const Market = () => {
                             repeat: Infinity,
                             ease: "linear"
                         }}
-                        className="inline-block mb-6"
+                        className="inline-block mb-4 md:mb-6"
                     >
-                        <IoRocketOutline className="w-20 h-20 text-indigo-600" />
+                        <IoRocketOutline className="w-16 h-16 md:w-20 md:h-20 text-indigo-600" />
                     </motion.div>
-                    <h1 className="text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-500">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-blue-500">
                         Innovation Market Place
                     </h1>
                     <motion.p 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5 }}
-                        className="text-xl text-gray-600"
+                        className="text-lg md:text-xl text-gray-600"
                     >
                         Discover Our Innovative Solutions and Career Opportunities
                     </motion.p>
@@ -121,20 +121,20 @@ const Market = () => {
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mb-12 max-w-2xl mx-auto"
+                    className="mb-8 md:mb-12 max-w-2xl mx-auto px-4"
                 >
                     <div className="relative">
                         <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                         <input
                             type="text"
                             placeholder="Search solutions and careers..."
-                            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all"
+                            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all text-sm md:text-base"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </div>
                     <motion.div 
-                        className="flex gap-4 mt-4 justify-center flex-wrap"
+                        className="flex gap-2 md:gap-4 mt-4 justify-center flex-wrap"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
@@ -144,7 +144,7 @@ const Market = () => {
                                 key={filter}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                                className={`px-3 md:px-4 py-2 rounded-full text-sm md:text-base transition-all duration-300 ${
                                     activeFilter === filter
                                         ? 'bg-gradient-to-r from-indigo-600 to-blue-500 text-white shadow-lg'
                                         : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
@@ -158,11 +158,11 @@ const Market = () => {
                 </motion.div>
 
                 {/* Solutions Section */}
-                <section className="mb-20">
+                <section className="mb-12 md:mb-20">
                     <motion.h2 
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="text-4xl font-bold text-gray-800 mb-8 text-center"
+                        className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 md:mb-8 text-center"
                     >
                         Innovative Solutions
                     </motion.h2>
@@ -170,7 +170,7 @@ const Market = () => {
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
                     >
                         {filterItems(solutions).map((solution, index) => (
                             <motion.div
@@ -180,21 +180,21 @@ const Market = () => {
                                     scale: 1.03,
                                     transition: { duration: 0.2 }
                                 }}
-                                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                                className="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
                                 onHoverStart={() => setHoveredCard(index)}
                                 onHoverEnd={() => setHoveredCard(null)}
                             >
                                 <motion.div
-                                    className="absolute top-0 right-0 m-4 flex items-center space-x-2"
+                                    className="absolute top-0 right-0 m-3 md:m-4 flex items-center space-x-2"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0 }}
                                 >
-                                    <span className="flex items-center bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <span className="flex items-center bg-indigo-100 text-indigo-800 px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">
                                         <FiStar className="mr-1" /> {solution.stats.rating}
                                     </span>
                                 </motion.div>
-                                <div className="text-indigo-600 mb-4">
+                                <div className="text-indigo-600 mb-3 md:mb-4">
                                     <motion.div
                                         animate={hoveredCard === index ? { 
                                             rotate: 360,
@@ -205,19 +205,19 @@ const Market = () => {
                                         {solution.icon}
                                     </motion.div>
                                 </div>
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">{solution.title}</h3>
-                                <span className="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mb-3">
+                                <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">{solution.title}</h3>
+                                <span className="inline-block bg-blue-100 text-blue-800 text-xs md:text-sm px-2 md:px-3 py-1 rounded-full mb-3">
                                     {solution.category}
                                 </span>
-                                <p className="text-gray-600">{solution.description}</p>
+                                <p className="text-sm md:text-base text-gray-600">{solution.description}</p>
                                 <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-100">
-                                    <span className="flex items-center text-sm text-gray-500">
+                                    <span className="flex items-center text-xs md:text-sm text-gray-500">
                                         <FiUsers className="mr-2" /> {solution.stats.users}
                                     </span>
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="flex items-center px-4 py-2 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-lg hover:from-indigo-700 hover:to-blue-600 transition-all duration-300"
+                                        className="flex items-center px-3 md:px-4 py-2 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-lg text-xs md:text-sm hover:from-indigo-700 hover:to-blue-600 transition-all duration-300"
                                     >
                                         Explore <FiArrowRight className="ml-2" />
                                     </motion.button>

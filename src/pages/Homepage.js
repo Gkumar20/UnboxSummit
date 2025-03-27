@@ -41,15 +41,23 @@ const Homepage = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1024,
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
                 }
             }
         ]
@@ -86,24 +94,24 @@ const Homepage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-white via-blue-50 to-indigo-50">
             {/* Hero Section */}
-            <div className="relative h-screen flex items-center justify-center overflow-hidden">
+            <div className="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-4">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/90"></div>
                 <motion.div 
-                    className="text-center z-10 px-4"
+                    className="text-center z-10"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-600">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-600">
                         Discover Your Path
                     </h1>
-                    <p className="text-xl md:text-2xl mb-8 text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-600 max-w-2xl mx-auto px-4">
                         Let AI guide you to your perfect career path with personalized mentorship and hands-on learning
                     </p>
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r  from-yellow-200 to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-gradient-to-r from-yellow-200 to-pink-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                         Start Your Journey
                     </motion.button>
@@ -111,61 +119,63 @@ const Homepage = () => {
             </div>
 
             {/* Process Steps */}
-            <div className="container mx-auto px-4 py-20">
-                <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r  from-yellow-200 to-pink-600">
+            <div className="container mx-auto px-4 py-12 md:py-20">
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-600">
                     Your Path to Success
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {processSteps.map((step, index) => (
-                        <AnimatedCard key={index} delay={index * 0.1} className="bg-white/80 backdrop-blur-md rounded-lg p-6 shadow-lg border border-blue-100">
-                            <step.icon className="w-12 h-12 mb-4 text-blue-500" />
-                            <h3 className="text-xl font-semibold mb-2 text-gray-800">{step.title}</h3>
-                            <p className="text-gray-600">{step.description}</p>
+                        <AnimatedCard key={index} delay={index * 0.1} className="bg-white/80 backdrop-blur-md rounded-lg p-4 md:p-6 shadow-lg border border-blue-100">
+                            <step.icon className="w-8 h-8 md:w-12 md:h-12 mb-4 text-blue-500" />
+                            <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-800">{step.title}</h3>
+                            <p className="text-sm md:text-base text-gray-600">{step.description}</p>
                         </AnimatedCard>
                     ))}
                 </div>
             </div>
 
             {/* Upcoming Workshops Carousel */}
-            <div className="container mx-auto px-4 py-20">
-                <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r  from-yellow-200 to-pink-600">
+            <div className="container mx-auto px-4 py-12 md:py-20">
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-600">
                     Upcoming Workshops
                 </h2>
-                <Slider {...sliderSettings} className="workshop-slider">
-                    {workshops.map((workshop, index) => (
-                        <div key={index} className="px-4">
-                            <AnimatedCard className="bg-white/80 backdrop-blur-md rounded-lg p-6 shadow-lg border border-blue-100 h-full">
-                                <div className="flex flex-col h-full">
-                                    <h3 className="text-xl font-semibold mb-2 text-gray-800">{workshop.title}</h3>
-                                    <p className="text-gray-600 mb-4">Date: {workshop.date}</p>
-                                    <p className="text-gray-600 mb-4">Available Spots: {workshop.spots}</p>
-                                    <motion.button
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="mt-auto bg-blue-500 hover:bg-indigo-500 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center justify-center gap-2"
-                                    >
-                                        Register Now <FaArrowRight />
-                                    </motion.button>
-                                </div>
-                            </AnimatedCard>
-                        </div>
-                    ))}
-                </Slider>
+                <div className="max-w-6xl mx-auto">
+                    <Slider {...sliderSettings} className="workshop-slider">
+                        {workshops.map((workshop, index) => (
+                            <div key={index} className="px-2 md:px-4">
+                                <AnimatedCard className="bg-white/80 backdrop-blur-md rounded-lg p-4 md:p-6 shadow-lg border border-blue-100 h-full">
+                                    <div className="flex flex-col h-full">
+                                        <h3 className="text-lg md:text-xl font-semibold mb-2 text-gray-800">{workshop.title}</h3>
+                                        <p className="text-sm md:text-base text-gray-600 mb-2">Date: {workshop.date}</p>
+                                        <p className="text-sm md:text-base text-gray-600 mb-4">Available Spots: {workshop.spots}</p>
+                                        <motion.button
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                            className="mt-auto bg-blue-500 hover:bg-indigo-500 text-white px-4 md:px-6 py-2 rounded-full text-sm md:text-base font-semibold flex items-center justify-center gap-2"
+                                        >
+                                            Register Now <FaArrowRight />
+                                        </motion.button>
+                                    </div>
+                                </AnimatedCard>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
             </div>
 
             {/* Process Flow Diagram */}
-            <div className="container mx-auto px-4 py-20">
-                <h2 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r  from-yellow-200 to-pink-600">
+            <div className="container mx-auto px-4 py-12 md:py-20">
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-600">
                     Your Journey Map
                 </h2>
-                <div className="h-[400px] bg-white/80 rounded-lg p-4 shadow-lg border border-blue-100" data-aos="fade-up">
+                <div className="h-[300px] md:h-[400px] bg-white/80 rounded-lg p-4 shadow-lg border border-blue-100" data-aos="fade-up">
                     <ReactFlow
                         nodes={flowNodes}
                         edges={edges}
                         nodeTypes={nodeTypes}
                         fitView
                         className="bg-blue-50/50"
-                        defaultViewport={{ x: 0, y: 0, zoom: 1.5 }}
+                        defaultViewport={{ x: 0, y: 0, zoom: 1 }}
                     >
                         <Background color="#3b82f6" gap={16} size={1} />
                         <Controls />
@@ -174,34 +184,34 @@ const Homepage = () => {
             </div>
 
             {/* Achievements & Milestones Section */}
-            <div className="container mx-auto px-4 py-20">
-                <h2 className="text-4xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r  from-yellow-200 to-pink-600 gradient-text">
+            <div className="container mx-auto px-4 py-12 md:py-20">
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-20 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-pink-600 gradient-text">
                     Your Progress Journey
                 </h2>
                 
                 {/* Progress Tracker */}
-                <div className="mb-16 text-gray-600">
+                <div className="mb-8 md:mb-16">
                     <ProgressTracker currentPoints={250} />
                 </div>
 
                 {/* Achievements Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8 md:mt-12">
                     {achievements.map((achievement, index) => (
                         <AnimatedCard 
                             key={index} 
                             delay={index * 0.1} 
-                            className="bg-white/80 backdrop-blur-md rounded-lg p-6 shadow-lg border border-blue-100"
+                            className="bg-white/80 backdrop-blur-md rounded-lg p-4 md:p-6 shadow-lg border border-blue-100"
                         >
                             <div className="flex items-start justify-between mb-4">
-                                <h3 className="text-lg font-semibold text-gray-800">{achievement.title}</h3>
-                                <span className="bg-blue-500 px-2 py-1 rounded-full text-sm text-white">
+                                <h3 className="text-base md:text-lg font-semibold text-gray-800">{achievement.title}</h3>
+                                <span className="bg-blue-500 px-2 py-1 rounded-full text-xs md:text-sm text-white">
                                     {achievement.points} pts
                                 </span>
                             </div>
-                            <p className="text-gray-600 text-sm">{achievement.description}</p>
+                            <p className="text-xs md:text-sm text-gray-600">{achievement.description}</p>
                             <div className="relative w-full h-1 bg-gray-200 rounded-full mt-4 overflow-hidden">
                                 <motion.div
-                                    className="absolute inset-0 bg-gradient-to-r  from-yellow-200 to-pink-600"
+                                    className="absolute inset-0 bg-gradient-to-r from-yellow-200 to-pink-600"
                                     initial={{ width: 0 }}
                                     whileInView={{ width: '60%' }}
                                     transition={{ duration: 1, delay: 0.5 + (index * 0.1) }}
@@ -214,16 +224,16 @@ const Homepage = () => {
             </div>
 
             {/* Call to Action */}
-            <div className="container mx-auto px-4 py-20">
-                <div className="bg-gradient-to-r  from-yellow-200 to-pink-600 rounded-2xl p-8 md:p-12 text-center shadow-xl">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Start Your Journey?</h2>
-                    <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <div className="container mx-auto px-4 py-12 md:py-20">
+                <div className="bg-gradient-to-r from-yellow-200 to-pink-600 rounded-xl md:rounded-2xl p-6 md:p-12 text-center shadow-xl">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6">Ready to Start Your Journey?</h2>
+                    <p className="text-lg md:text-xl text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto">
                         Join thousands of successful professionals who found their dream career path through our platform
                     </p>
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-white text-blue-600 px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                         Get Started Now
                     </motion.button>
